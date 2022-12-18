@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0");
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 
 body {
   background-color: rgb(75, 75, 75);
@@ -34,8 +45,16 @@ body {
 
 .archiveControl{
   display: flex;
-  justify-content: flex-start;
+  align-items: center;
+  gap: .5rem;
   color: grey;
+  
+}
+
+.add, .del {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .archiveControl .add {
@@ -45,7 +64,9 @@ body {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 100;
   font-size: 1.5rem;
+  width: 2rem;
   background-color: rgb(75, 75, 75);
+
 }
 
 .archiveControl .add:hover{
@@ -64,6 +85,7 @@ body {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 100;
   font-size: 1.5rem;
+  width: 2rem;
   background-color: rgb(75, 75, 75);
 }
 
@@ -103,8 +125,7 @@ body {
 }
 
 .box {
-  padding: .5rem 0rem;
-  font-family: 'Alegreya Sans SC', sans-serif;
+  flex: 1;
 }
 
 .topHeader {
@@ -162,4 +183,17 @@ body {
 
 .projectionBox:focus {
   border: none;
+}
+
+.hddIconContainer {
+  margin-right: .5rem;
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+  color: darkgrey;
+  cursor: pointer;
+}
+
+.hddIconContainer:hover{
+  color: white;
 }

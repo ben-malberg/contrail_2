@@ -185,7 +185,7 @@ body {
   border: none;
 }
 
-.hddIconContainer {
+.hddIconContainer1 {
   margin-right: .5rem;
   display: flex;
   justify-content: center;
@@ -194,6 +194,16 @@ body {
   cursor: pointer;
 }
 
-.hddIconContainer:hover{
+.hddIconContainer2 {
+  margin-right: .5rem;
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+  color: darkgrey;
+  cursor: pointer;
+}
+
+.hddIconContainer1:hover,
+.hddIconContainer2:hover{
   color: white;
 }

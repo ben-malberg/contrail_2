@@ -1,12 +1,11 @@
 import * as React from "react";
 import { Allotment } from "allotment";
-import { saveAs } from "file-saver";
 import "allotment/dist/style.css";
 import "./App.css";
 import Projection from "./components/projection";
 import TopHeader from "./components/topHeader.js";
 import Archive from "./components/archive.js";
-let FileSaver = require("file-saver");
+import { handleSave } from "./components/handleSave";
 
 export default function App() {
     const [entries, setEntries] = React.useState(
@@ -37,15 +36,6 @@ export default function App() {
         }
         return nums + chosenLetters;
     }
-
-    
-    const handleSave = () => {
-        const currentEntry = entries.find((entry) => entry.id === currentId).body;
-        let blob = new Blob([currentEntry], {
-            type: "text/plain;charset=utf-8",
-        });
-        FileSaver.saveAs(blob, `${createTimeStamp()}.txt`);
-    };
 
     function createTimeStamp() {
         const timeData = new Date();
@@ -139,12 +129,25 @@ export default function App() {
                                 <div className="box"></div>
                                 <div
                                     className="saveBox"
-                                    onClick={() => handleSave()}
-                                >   
-                                    <div className="hddIconContainer">
-                                      <span id="material-symbols-outlines" className="material-symbols-outlined">
-                                          hard_drive
-                                      </span>
+                                    // invokes save function to download text file
+                                    onClick={() => handleSave(entries, currentId, createTimeStamp, 1)}
+                                >
+                                    <div className="hddIconContainer1">
+                                        <span
+                                            id="material-symbols-outlines"
+                                            className="material-symbols-outlined"
+                                        >
+                                            save
+                                        </span>
+                                    </div>
+                                </div>
+                                <div
+                                    className="saveBox"
+                                    // invokes save function to download text file
+                                    onClick={() => handleSave(entries, currentId, createTimeStamp, 2)}
+                                >
+                                    <div className="hddIconContainer2">
+                                        save all
                                     </div>
                                 </div>
                             </div>

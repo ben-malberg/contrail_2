@@ -11,7 +11,11 @@ export default function App() {
     const [entries, setEntries] = React.useState(
         () =>
             JSON.parse(localStorage.getItem("entries")) || [
-                { id: createId(), body: createTimeStamp() },
+                {
+                    id: createId(),
+                    timeStamp: createTimeStamp(),
+                    body: createTimeStamp(),
+                },
             ]
     );
 
@@ -46,7 +50,11 @@ export default function App() {
 
     function createEntry() {
         setEntries((currentEntries) => {
-            const newEntry = { id: createId(), body: createTimeStamp() };
+            const newEntry = {
+                id: createId(),
+                timeStamp: createTimeStamp(),
+                body: createTimeStamp(),
+            };
             setCurrentId(newEntry.id);
             const newArray = currentEntries.map((entry) => entry);
             newArray.unshift(newEntry);
@@ -126,11 +134,18 @@ export default function App() {
                                 <div className="del" onClick={removeEntry}>
                                     -
                                 </div>
-                                <div className="box"></div>
+                                {/* <div className="box"></div> */}
                                 <div
                                     className="saveBox"
                                     // invokes save function to download text file
-                                    onClick={() => handleSave(entries, currentId, createTimeStamp, 1)}
+                                    onClick={() =>
+                                        handleSave(
+                                            entries,
+                                            currentId,
+                                            createTimeStamp,
+                                            1
+                                        )
+                                    }
                                 >
                                     <div className="hddIconContainer1">
                                         <span
@@ -144,7 +159,14 @@ export default function App() {
                                 <div
                                     className="saveBox"
                                     // invokes save function to download text file
-                                    onClick={() => handleSave(entries, currentId, createTimeStamp, 2)}
+                                    onClick={() =>
+                                        handleSave(
+                                            entries,
+                                            currentId,
+                                            createTimeStamp,
+                                            2
+                                        )
+                                    }
                                 >
                                     <div className="hddIconContainer2">
                                         save all

@@ -1,7 +1,7 @@
 {
-  "name": "contrail",
+  "name": "contrail_2",
   "version": "0.1.0",
-  "homepage": "https://thejourneyville.github.io/contrail",
+  "homepage": "https://github.com/ben-malberg/contrail_2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

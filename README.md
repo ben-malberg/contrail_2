@@ -6,6 +6,7 @@ draggable panels<br>
 add/remove entries<br>
 time/date stamps<br>
 persists to local storage<br>
-can save current entry locally
+can save current entry local memory<br>
+can save all entries to local memory<br>
 <br>
 <i>made in React by</i> Ben Malberg 2022
